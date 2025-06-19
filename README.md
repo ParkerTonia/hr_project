@@ -4,76 +4,42 @@ I’m excited you stopped by. This repository walks through a complete explorati
 
 ---
 
-## Project Structure
+# HR Employee Attrition Analysis
 
+## Project Overview
+This repository contains an end-to-end analysis of the IBM HR Employee Attrition dataset. The goals are to
 
-- **data/**  
-  Raw CSV file downloaded from IBM’s HR Analytics repository.
+1. Clean and encode the raw HR data  
+2. Explore key factors and visualize relationships  
+3. Train and evaluate a predictive model for employee turnover  
+4. Uncover natural employee segments via clustering  
+5. Outline a deployable machine-learning pipeline and monitoring plan  
 
-- **notebooks/hr_attrition_analysis.ipynb**  
-  Jupyter notebook with all steps: cleaning, encoding, EDA, model training & evaluation, clustering, and deployment notes.
+## Skills Demonstrated
+- Data cleaning and feature engineering (binary encoding, one-hot encoding)  
+- Exploratory data analysis and visualization (histograms, boxplots, heatmaps)  
+- Supervised learning with logistic regression (model training, cross-validation, ROC/AUC)  
+- Unsupervised learning with K-Means clustering (Elbow method, silhouette scores, cluster profiling)  
+- Use of Scikit-Learn pipelines for reproducible preprocessing and inference  
+- Report writing and business-focused interpretation of results  
 
-- **Parker_Final.pdf**  
-  Formatted report that combines code listings, tables, charts, and written interpretation.
+## Dataset
+The analysis uses the IBM HR Employee Attrition dataset:
 
-## Dataset Overview
+- **Filename**: `WA_Fn-UseC_-HR-Employee-Attrition.csv`  
+- **Source**: IBM HR Analytics repository on Kaggle  
+- **Key columns**:  
+  - `Attrition` (Yes/No target)  
+  - Demographics: Age, Gender, DistanceFromHome  
+  - Job factors: Department, JobRole, BusinessTravel, OverTime  
+  - Compensation: MonthlyIncome, PercentSalaryHike  
+  - Satisfaction/Engagement scores: JobSatisfaction, EnvironmentSatisfaction, WorkLifeBalance, etc.  
+  - Tenure: YearsAtCompany, YearsInCurrentRole, YearsSinceLastPromotion  
 
-| Column                   | Description                                                      |
-|--------------------------|------------------------------------------------------------------|
-| Attrition                | Target variable: “Yes” if the employee left, “No” otherwise      |
-| Age                      | Employee age                                                    |
-| BusinessTravel           | Frequency of travel (e.g. “Travel_Rarely”)                       |
-| Department               | Department name (Sales, R&D, HR)                                |
-| DistanceFromHome         | Distance to office in miles                                      |
-| MonthlyIncome            | Monthly salary                                                   |
-| OverTime                 | “Yes”/“No” indicator                                             |
-| …                        | …                                                                |
+Place the CSV file in a `data/` folder at the root of this repository before running the analysis.
 
-Full schema in the notebook.
-
-## Methodology
-
-1. **Data Cleaning & Encoding**  
-   - Converted “Yes”/“No” to binary (1/0).  
-   - One-hot encoded categorical fields (JobRole, Department, etc.).
-
-2. **Exploratory Data Analysis**  
-   - Histograms and boxplots for numerical variables.  
-   - Bar charts of attrition rates by gender, department, and overtime status.  
-   - Correlation heatmap to identify strong predictors.
-
-3. **Predictive Modeling**  
-   - Split data (70% train / 30% test).  
-   - Trained Logistic Regression to predict attrition.  
-   - Evaluated with accuracy, confusion matrix, precision, recall, F1, and ROC AUC.
-
-4. **Unsupervised Clustering**  
-   - Scaled selected features (satisfaction, involvement, etc.).  
-   - Used Elbow Method and silhouette scores to choose k.  
-   - Fitted K-Means and profiled each cluster’s demographics and attrition rates.
-
-5. **Deployment Plan**  
-   - Built a Scikit-Learn `Pipeline` for preprocessing + prediction.  
-   - Recommended quarterly retraining and drift monitoring.
-
-## Key Results
-
-| Metric    | Score |
-|-----------|-------|
-| Accuracy  | 0.85  |
-| Precision | 0.62  |
-| Recall    | 0.78  |
-| F1 Score  | 0.69  |
-| AUC       | 0.90  |
-
-Confusion matrix and ROC curve are in the notebook. Clustering uncovered three segments:
-1. Highly engaged, low-risk  
-2. Moderately engaged, medium-risk  
-3. Low engagement, high-risk  
-
-## How to Reproduce
-
-1. Clone this repo.  
-2. Install dependencies:
+## How to Run
+1. **Clone** this repository:
    ```bash
-   pip install pandas numpy scikit-learn matplotlib seaborn notebook
+   git clone https://github.com/YourUsername/HR-Attrition-Analysis.git
+   cd HR-Attrition-Analysis
