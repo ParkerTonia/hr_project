@@ -1,6 +1,6 @@
 # 👋 Hi there, welcome to my HR Employee Attrition Analysis!
 
-I’m excited you stopped by. This repository walks through a complete exploration of IBM’s HR Employee Attrition dataset—from cleaning and visualizations to a predictive model and employee clustering. Feel free to poke around!
+I’m excited you stopped by. This repository walks through a complete exploration of IBM’s HR Employee Attrition dataset from cleaning and visualizations to a predictive model and employee clustering. Feel free to poke around!
 
 ---
 
